@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="utf-8" />
-    <title>Your page title here :)</title>
+    <title>Training Platform</title>
     <meta
       name="description"
       content=""
@@ -14,23 +12,17 @@
       content=""
     />
 
-    <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1"
     />
 
-    <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link
       href="//fonts.googleapis.com/css?family=Raleway:400,300,600"
       rel="stylesheet"
       type="text/css"
     />
 
-    <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link
       rel="stylesheet"
       href="css/normalize.css"
@@ -39,38 +31,45 @@
       rel="stylesheet"
       href="css/skeleton.css"
     />
+    <link
+      rel="stylesheet"
+      href="css/style.css"
+    />
 
-    <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link
       rel="icon"
       type="image/png"
       href="images/favicon.png"
     />
+    <script
+      defer
+      src="js/app.js"
+    ></script>
   </head>
   <body>
-    <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <div class="container">
-      <form style="display: grid; place-content: center; margin-block: 25%">
+      <form
+        action="./dashboard.html"
+        style="display: grid; place-content: center; margin-block: 25%"
+      >
         <div class="row">
           <h3 class="margin">Training Platform</h3>
           <h5>Please log in</h5>
         </div>
         <div class="row">
-          <label for="exampleEmailInput">Username</label>
+          <label for="username">Username</label>
           <input
             class="u-full-width"
-            type="email"
-            placeholder="username lowercase"
-            id="exampleEmailInput"
+            type="text"
+            placeholder="username"
+            id="username"
           />
         </div>
         <div class="row">
           <label for="exampleEmailInput">Password</label>
           <input
             class="u-full-width"
-            type="email"
+            type="password"
             placeholder="password"
             id="exampleEmailInput"
           />
@@ -83,8 +82,5 @@
         />
       </form>
     </div>
-
-    <!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   </body>
 </html>

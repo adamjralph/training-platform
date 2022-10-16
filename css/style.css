@@ -1,0 +1,26 @@
+a {
+  text-decoration: none;
+}
+
+.side-link {
+  display: block;
+  background-color: #1eaedb;
+  color: #fff;
+  padding: 1rem;
+  margin-block: 1px;
+}
+
+.side-link:hover,
+.side-link:focus {
+  color: black;
+}
+
+.side-link-active {
+  background-color: #2137b6;
+}
+
+.side-link-active:hover,
+.side-link-active:focus {
+  background-color: #1eaedb;
+  color: #fff;
+}
