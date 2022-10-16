@@ -47,40 +47,43 @@
     ></script>
   </head>
   <body>
-    <div class="container">
-      <form
-        action="./dashboard.html"
-        style="display: grid; place-content: center; margin-block: 25%"
-      >
-        <div class="row">
-          <h3 class="margin">Training Platform</h3>
-          <h5>Please log in</h5>
-        </div>
-        <div class="row">
-          <label for="username">Username</label>
+    <div class="container login-container">
+      <section class="login-screen">
+        <form
+          class="login-form"
+          action="dashboard.html"
+          style="display: grid; place-content: center; margin-block: 25%"
+        >
+          <div class="row">
+            <h3 class="margin">Training Platform</h3>
+            <h5>Please log in</h5>
+          </div>
+          <div class="row">
+            <label for="username">Username</label>
+            <input
+              class="u-full-width"
+              type="text"
+              placeholder="username"
+              id="username"
+            />
+          </div>
+          <div class="row">
+            <label for="exampleEmailInput">Password</label>
+            <input
+              class="u-full-width"
+              type="password"
+              placeholder="password"
+              id="exampleEmailInput"
+            />
+          </div>
+          <a href="dashboard.html"></a>
           <input
-            class="u-full-width"
-            type="text"
-            placeholder="username"
-            id="username"
+            class="button-primary"
+            type="submit"
+            value="Log in"
           />
-        </div>
-        <div class="row">
-          <label for="exampleEmailInput">Password</label>
-          <input
-            class="u-full-width"
-            type="password"
-            placeholder="password"
-            id="exampleEmailInput"
-          />
-        </div>
-        <a href="dashboard.html"></a>
-        <input
-          class="button-primary"
-          type="submit"
-          value="Log in"
-        />
-      </form>
+        </form>
+      </section>
     </div>
   </body>
 </html>
