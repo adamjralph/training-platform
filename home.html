@@ -30,6 +30,7 @@
       rel="stylesheet"
     />
 
+
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -97,6 +98,10 @@
       href="sidebars.css"
       rel="stylesheet"
     />
+    <script
+      defer
+      src="js/signout.js"
+    ></script>
   </head>
   <body>
     <svg
@@ -384,8 +389,9 @@
             >
             <li><hr class="dropdown-divider" /></li>
             <li
+            id="sign-out"
               ><a
-                class="dropdown-item"
+                class="dropdown-item sign-out"
                 href="#"
                 >Sign out</a
               ></li
@@ -400,26 +406,18 @@
             This is some text within a card body.
           </div>
         </div>
-        <a href="index.html">
+        <a href="#">
           <h3>Login screen</h3>
         </a>
 
       </section>
-      
-    </body>
-      
       <script>
-        // window.addEventListener('DOMContentLoaded', (e) => {
-        //   alert('Loading...')
-        // })
-        const loggedIn = localStorage.getItem('admin')
-        // window.location.href = "index.html";
-        // const admin = localStorage.getItem("admin")
+        const loggedIn = localStorage.getItem("admin");
         if (loggedIn != 1) {
           window.location.href = "index.html";
         }
-
-      </script>
+      </script>    
+    </body>
   
       <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
   
