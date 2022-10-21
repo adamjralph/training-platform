@@ -141,9 +141,24 @@
             </div>
             <button
               class="w-100 btn btn-lg btn-primary"
+              id="sign-in-btn"
               type="submit"
-              >Sign in</button
+              >Sign in
+            </button>
+            <button
+              class="w-100 btn btn-lg btn-primary"
+              id="sign-in-spinner"
+              style="display: none"
+              type="button"
+              disabled
             >
+              <span
+                class="spinner-border spinner-border-sm"
+                role="status"
+                aria-hidden="true"
+              ></span>
+              Loading...
+            </button>
             <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
           </form>
         </div>
