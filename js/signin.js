@@ -1,6 +1,6 @@
-const login = document.getElementById("form-signin");
+const login = document.getElementById("sign-in-form");
 const admin = "";
-
+const output = document.getElementById("sign-in-feedback");
 // localStorage.removeItem("admin");
 
 login.addEventListener("submit", async (e) => {
@@ -12,6 +12,8 @@ login.addEventListener("submit", async (e) => {
     await signInDelay();
     localStorage.setItem("admin", 1);
     activateLoadingSpinner();
+  } else {
+    output.innerText = "Username or password incorrect";
   }
   e.preventDefault();
 });

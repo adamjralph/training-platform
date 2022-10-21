@@ -1,45 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta
-      http-equiv="X-UA-Compatible"
-      content="IE=edge"
-    />
+    <meta charset="utf-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0"
+      content="width=device-width, initial-scale=1"
     />
+    <meta
+      name="description"
+      content=""
+    />
+
     <link
       href="/assets/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="signin.css"
       rel="stylesheet"
     />
     <script
       defer
       src="js/signin.js"
     ></script>
-    <title>Login</title>
+
+    <style>
+      .sign-in-page {
+        height: 100vh;
+      }
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+          inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link
+      href="signin.css"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <main class="sign-in-page">
-      <div class="container-fluid text-center">
-        <div
-          class="d-flex flex-column min-vh-100 justify-content-center align-items-center"
-        >
+  <body class="text-center">
+    <main class="sign-in-page row">
+      <div class="container m-auto">
+        <div class="row justify-content-center">
           <form
-            class="sign-in-form"
-            id="sign-in-form"
+            class="col-2 m-auto"
+            id="form-signin"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="72"
               height="72"
               fill="currentColor"
-              class="bi bi-mortarboard mb-3"
+              class="bi bi-mortarboard"
               viewBox="0 0 16 16"
             >
               <path
@@ -49,8 +107,9 @@
                 d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46l-3.892-1.556Z"
               />
             </svg>
-            <h3 class="mb-3">Please sign in</h3>
-            <div class="form-floating mb-3">
+            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+            <div class="form-floating">
               <input
                 type="text"
                 class="form-control username"
@@ -59,15 +118,16 @@
               />
               <label for="floatingInput">Username</label>
             </div>
-            <div class="form-floating mb-3">
+            <div class="form-floating">
               <input
                 type="password"
                 class="form-control password"
-                id="floatingInput"
+                id="floatingPassword"
                 placeholder="Password"
               />
               <label for="floatingPassword">Password</label>
             </div>
+
             <div class="checkbox mb-3">
               <label>
                 <input
@@ -78,13 +138,13 @@
               </label>
             </div>
             <button
-              class="w-100 btn btn-lg btn-primary mb-3"
+              class="w-100 btn btn-lg btn-primary"
               id="sign-in-btn"
               type="submit"
               >Sign in
             </button>
             <button
-              class="w-100 btn btn-lg btn-primary mb-3"
+              class="w-100 btn btn-lg btn-primary"
               id="sign-in-spinner"
               style="display: none"
               type="button"
@@ -97,12 +157,7 @@
               ></span>
               Loading...
             </button>
-            <div class="row">
-              <div
-                class="sign-in-feedback col text-center"
-                id="sign-in-feedback"
-              ></div>
-            </div>
+            <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
           </form>
         </div>
       </div>
