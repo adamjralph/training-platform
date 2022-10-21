@@ -6,8 +6,6 @@ const admin = "";
 login.addEventListener("submit", async (e) => {
   const username = document.querySelector(".username").value;
   const password = document.querySelector(".password").value;
-  console.log(username);
-  console.log(password);
   if (username === "admin" && password === "admin") {
     await signInDelay();
     localStorage.setItem("admin", 1);
@@ -26,5 +24,5 @@ function activateLoadingSpinner() {
 function signInDelay() {
   setTimeout(() => {
     window.location.href = "home.html";
-  }, 2000);
+  }, 1500);
 }

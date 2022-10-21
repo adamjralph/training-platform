@@ -32,6 +32,20 @@
 
 
     <style>
+
+      .signout-spinner-container {
+        position: absolute;
+        background-color: #333;
+        color: #fff;
+        height: 100vh;
+        opacity: 0.8;
+        z-index: 1;
+      }
+
+      .spinner-border {
+        margin-bottom: 1rem;
+      }
+      
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -104,6 +118,17 @@
     ></script>
   </head>
   <body>
+    <div class="container-fluid row signout-spinner-container"
+    id="signout-spinner"
+    style="display: none;" 
+    >
+      <div class="col m-auto text-center">
+        <div class="spinner-border row mx-auto" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <p>logging you out ...</p>
+      </div>
+    </div>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       style="display: none"
@@ -406,7 +431,7 @@
             This is some text within a card body.
           </div>
         </div>
-        <a href="#">
+        <a href="index.html">
           <h3>Login screen</h3>
         </a>
 
