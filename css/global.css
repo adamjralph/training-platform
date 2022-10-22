@@ -1,5 +1,11 @@
-.card-link {
+.card-link,
+.nav-pills {
   text-decoration: none;
+  list-style: none;
+}
+
+.nav-item {
+  width: 100%;
 }
 
 .signout-spinner-container {
