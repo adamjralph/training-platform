@@ -1,6 +1,6 @@
-const login = document.getElementById("form-signin");
+const login = document.getElementById("signin-form");
 const admin = "";
-
+const output = document.getElementById("signin-feedback");
 // localStorage.removeItem("admin");
 
 login.addEventListener("submit", async (e) => {
@@ -10,13 +10,18 @@ login.addEventListener("submit", async (e) => {
     await signInDelay();
     localStorage.setItem("admin", 1);
     activateLoadingSpinner();
+  } else {
+    output.innerText = "Username or password incorrect";
+    setTimeout(() => {
+      output.innerText = "";
+    }, 2000);
   }
   e.preventDefault();
 });
 
 function activateLoadingSpinner() {
-  let btn = document.getElementById("sign-in-btn");
-  let spinner = document.getElementById("sign-in-spinner");
+  let btn = document.getElementById("signin-btn");
+  let spinner = document.getElementById("signin-spinner");
   btn.style.display = "none";
   spinner.style.display = "block";
 }
