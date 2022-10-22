@@ -4,7 +4,6 @@ signout.addEventListener("click", async (e) => {
   await signOutDelay();
   activateSignoutSpinner();
   localStorage.removeItem("admin");
-  e.preventDefault();
 });
 
 function activateSignoutSpinner() {
