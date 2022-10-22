@@ -30,20 +30,12 @@
       rel="stylesheet"
     />
 
+    <link
+      rel="stylesheet"
+      href="css/global.css"
+    />
+
     <style>
-      .signout-spinner-container {
-        position: absolute;
-        background-color: #333;
-        color: #fff;
-        height: 100vh;
-        opacity: 0.8;
-        z-index: 1;
-      }
-
-      .spinner-border {
-        margin-bottom: 1rem;
-      }
-
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -120,7 +112,6 @@
     <div
       class="container-fluid row signout-spinner-container"
       id="signout-spinner"
-      style="display: none"
     >
       <div class="col m-auto text-center">
         <div
@@ -445,13 +436,21 @@
           </ul>
         </div>
       </div>
-      <section class="container">
-        <h1 class="display-3">Hello</h1>
-        <div class="card">
-          <div class="card-body"> This is some text within a card body. </div>
-        </div>
-        <a href="#">
-          <h3>Login screen</h3>
+      <section class="container mt-5">
+        <a
+          href="#"
+          class="card-link"
+        >
+          <div class="card text-bg-primary mb-3 col-4">
+            <div class="card-header">Training platform</div>
+            <div class="card-body">
+              <h5 class="card-title">Primary card title</h5>
+              <p class="card-text"
+                >Some quick example text to build on the card title and make up
+                the bulk of the card's content.</p
+              >
+            </div>
+          </div>
         </a>
       </section>
     </main>
