@@ -419,7 +419,7 @@
                 ><a
                   class="dropdown-item"
                   href="#"
-                  >New project...</a
+                  >Add new learner...</a
                 ></li
               >
               <li
@@ -452,7 +452,7 @@
       </nav>
 
       <section class="mt-5 container">
-        <h1 class="mb-3">Welcome, Admin</h1>
+        <h1 class="mb-3">Welcome, <a href="profile.html">Admin</a></h1>
         <div class="row">
           <div class="card m-2 p-3 col-lg-5 card-dashboard text-dark">
             <h2 class="card-header">Dashboard | At a glance</h2>
@@ -476,40 +476,61 @@
                   <a href="#">Joe Workman </a>
                 </li>
               </ul>
-              <p class="card-text"
-                >Here you can view your stats and any curently pending tasks</p
+              <button
+                class="btn btn-primary"
+                href="dashboard.html"
+                >Go to dashboard</button
               >
             </div>
           </div>
-          <div class="card m-2 p-3 col-lg-5 card-dashboard text-dark">
-            <h2 class="card-header">Dashboard | At a glance</h2>
+          <div class="card m-2 p-3 col-lg-5 card-dashboard text-bg-light">
+            <h2 class="card-header">Training</h2>
             <div class="card-body">
-              <!-- <h5 class="card-title mb-3">Enrolements</h5> -->
               <ul>
-                <li
-                  >Students enrolled:
-                  <a href="#">23</a>
-                </li>
-                <li
-                  >Students due for training:
-                  <a href="#">3 </a>
-                </li>
-                <li
-                  >Recently enrolled:
-                  <a href="#">Joe Workman </a>
-                </li>
-                <li
-                  >Recently trained:
-                  <a href="#">Joe Workman </a>
-                </li>
+                <li>View available training</li>
+                <li>View training stats</li>
+                <li>Assign training</li>
+                <li>Download training material</li>
               </ul>
-              <p class="card-text"
-                >Here you can view your stats and any curently pending tasks</p
+              <button
+                class="btn btn-primary"
+                href="training.html"
+                >Go to training portal</button
               >
             </div>
           </div>
-        </div>
-        
+          <div class="card m-2 p-3 col-lg-5 card-dashboard text-bg-light">
+            <h2 class="card-header">Students</h2>
+            <div class="card-body">
+              <ul>
+                <li>View all enrollments</li>
+                <li>Add new learners</li>
+                <li>Assign training</li>
+                <li>Update learner details</li>
+              </ul>
+              <button
+                class="btn btn-primary"
+                href="students.html"
+                >View student portal</button
+              >
+            </div>
+          </div>
+          <div class="card m-2 p-3 col-lg-5 card-dashboard text-bg-light">
+            <h2 class="card-header">Results</h2>
+            <div class="card-body">
+              <ul>
+                <li>View learner results</li>
+                <li>Review answers</li>
+                <li>Set training standards</li>
+                <li>Download test results</li>
+              </ul>
+              <button
+                class="btn btn-primary"
+                href="results.html"
+                >Go to results page</button
+              >
+            </div>
+          </div>
         </div>
       </section>
     </main>
