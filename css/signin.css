@@ -16,6 +16,10 @@ body {
   padding: 15px;
 }
 
+.signin-feedback {
+  color: red;
+}
+
 .form-signin .form-floating:focus-within {
   z-index: 2;
 }
