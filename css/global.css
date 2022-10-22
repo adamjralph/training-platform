@@ -21,3 +21,7 @@
 .spinner-border {
   margin-bottom: 1rem;
 }
+
+.card-dashboard {
+  background-color: rgb(205, 188, 212);
+}
