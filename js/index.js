@@ -21,6 +21,8 @@ if (loggedIn != 1) {
         }
 
         form.classList.add("was-validated");
+
+        createNewStudent();
       },
       false
     );
@@ -40,17 +42,21 @@ function updateValue(e) {
   studentUsername.value = `${e.target.value}_id`;
 }
 
-createNewStudentForm.addEventListener("submit", (e) => {
-  const newStudent = {
-    studentFirstName: firstName.value,
-    studentLastName: lastName.value,
-    username: studentUsername.value,
-  };
-  localStorage.setItem((firstName = firstName.value));
-  localStorage.setItem((lastName = lastName.value));
+function createNewStudent() {
+  localStorage.setItem("firstName", firstName.value);
+  localStorage.setItem("lastName", lastName.value);
+}
 
-  const listOfStudents = document.getElementById("studentList");
-  const newStudentListItem = document.createElement("li");
-  listOfStudents.appendChild(newStudentListItem);
-  preventDefault(e);
-});
+const newStudentFirstName = localStorage.getItem("firstName");
+const newStudentLastName = localStorage.getItem("lastName");
+const newStudentFullname = newStudentFirstName + " " + newStudentLastName;
+const listOfStudents = document.getElementById("studentList");
+const newStudentListItem = document.createElement("li");
+const nameText = document.createTextNode(newStudentFullname);
+newStudentListItem.appendChild(nameText);
+listOfStudents.appendChild(newStudentListItem);
+// const newStudent = {
+//   studentFirstName: firstName.value,
+//   studentLastName: lastName.value,
+//   username: studentUsername.value,
+// };
