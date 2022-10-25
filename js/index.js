@@ -34,10 +34,23 @@ const position = document.getElementById("studentPosition");
 const studentUsername = document.getElementById("studentUsername");
 
 firstName.addEventListener("input", updateValue);
-lastName.addEventListener("input", updateValue);
+// lastName.addEventListener("input", updateValue);
 
 function updateValue(e) {
   studentUsername.value = `${e.target.value}_id`;
 }
 
-function createNewStudent() {}
+createNewStudentForm.addEventListener("submit", (e) => {
+  const newStudent = {
+    studentFirstName: firstName.value,
+    studentLastName: lastName.value,
+    username: studentUsername.value,
+  };
+  localStorage.setItem((firstName = firstName.value));
+  localStorage.setItem((lastName = lastName.value));
+
+  const listOfStudents = document.getElementById("studentList");
+  const newStudentListItem = document.createElement("li");
+  listOfStudents.appendChild(newStudentListItem);
+  preventDefault(e);
+});
