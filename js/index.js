@@ -27,16 +27,17 @@ if (loggedIn != 1) {
   });
 })();
 
-(function () {
-  "use strict";
+const createNewStudentForm = document.getElementById("createNewStudent");
+const firstName = document.getElementById("studentFirstName");
+const lastName = document.getElementById("studentLastName");
+const position = document.getElementById("studentPosition");
+const studentUsername = document.getElementById("studentUsername");
 
-  const firstName = document.getElementById("studentFirstName");
-  const lastName = document.getElementById("studentLastName");
-  const studentUsername = document.getElementById("studentUsername");
-  const createNewStudentForm = document.getElementById("createNewStudent");
+firstName.addEventListener("input", updateValue);
+lastName.addEventListener("input", updateValue);
 
-  firstName.addEventListener("change", (e) => {
-    console.log(firstName.value);
-    preventDefault(e);
-  });
-});
+function updateValue(e) {
+  studentUsername.value = `${e.target.value}_id`;
+}
+
+function createNewStudent() {}
