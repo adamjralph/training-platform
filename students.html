@@ -31,8 +31,6 @@
       href="css/global.css"
     />
 
-    <style></style>
-
     <!-- Custom styles for this template -->
     <link
       href="sidebars.css"
@@ -42,7 +40,10 @@
       defer
       src="js/signout.js"
     ></script>
-    <script src="js/index.js"></script>
+    <script
+      defer
+      src="js/index.js"
+    ></script>
   </head>
   <body>
     <div
@@ -410,6 +411,7 @@
             <div class="card-body">
               <form
                 class="needs-validation"
+                id="createNewStudent"
                 novalidate
               >
                 <div class="mb-3">
@@ -427,9 +429,53 @@
                   <div class="valid-feedback">Looks good!</div>
                   <div class="invalid-feedback">Please enter a first name</div>
                 </div>
+                <div class="mb-3">
+                  <label
+                    for="studentLastName"
+                    class="form-label"
+                    >Last name</label
+                  >
+                  <input
+                    required
+                    type="text"
+                    class="form-control"
+                    id="studentLastName"
+                  />
+                  <div class="valid-feedback">Looks good!</div>
+                  <div class="invalid-feedback">Please enter a last name</div>
+                </div>
+                <div class="mb-3">
+                  <label
+                    for="studentUserName"
+                    class="form-label"
+                    >Username</label
+                  >
+                  <input
+                    readonly
+                    type="text"
+                    class="form-control"
+                    id="studentUsername"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label
+                    for="studentPosition"
+                    class="form-label"
+                    >Position</label
+                  >
+                  <input
+                    required
+                    type="text"
+                    class="form-control"
+                    id="studentPosition"
+                  />
+                  <div class="valid-feedback">Looks good!</div>
+                  <div class="invalid-feedback">Please enter a job title</div>
+                </div>
                 <div>
                   <button
                     class="btn btn-primary"
+                    id="submit"
                     type="submit"
                     >Submit form</button
                   >

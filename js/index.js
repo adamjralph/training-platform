@@ -4,7 +4,7 @@ if (loggedIn != 1) {
 }
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
-(() => {
+(function () {
   "use strict";
 
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -26,3 +26,17 @@ if (loggedIn != 1) {
     );
   });
 })();
+
+(function () {
+  "use strict";
+
+  const firstName = document.getElementById("studentFirstName");
+  const lastName = document.getElementById("studentLastName");
+  const studentUsername = document.getElementById("studentUsername");
+  const createNewStudentForm = document.getElementById("createNewStudent");
+
+  firstName.addEventListener("change", (e) => {
+    console.log(firstName.value);
+    preventDefault(e);
+  });
+});
