@@ -50,16 +50,16 @@ function createNewStudent() {
 const newStudentFirstName = localStorage.getItem("firstName");
 const newStudentLastName = localStorage.getItem("lastName");
 const newStudentFullname = newStudentFirstName + " " + newStudentLastName;
-const listOfStudents = document.getElementById("studentList");
-const newStudentListItem = document.createElement("li");
-const newStudentLink = document.createElement("a");
-const nameText = document.createTextNode(newStudentFullname);
-newStudentLink.appendChild(nameText);
-newStudentLink.href = "#";
-newStudentListItem.appendChild(newStudentLink);
-listOfStudents.appendChild(newStudentLink);
-// const newStudent = {
-//   studentFirstName: firstName.value,
-//   studentLastName: lastName.value,
-//   username: studentUsername.value,
-// };
+
+createNewStudentElement();
+
+function createNewStudentElement() {
+  const listOfStudents = document.getElementById("studentList");
+  const newStudentListItem = document.createElement("li");
+  const newStudentLink = document.createElement("a");
+  const nameText = document.createTextNode(newStudentFullname);
+  newStudentLink.appendChild(nameText);
+  newStudentLink.href = "#";
+  newStudentListItem.appendChild(newStudentLink);
+  listOfStudents.appendChild(newStudentLink);
+}
