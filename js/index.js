@@ -52,9 +52,12 @@ const newStudentLastName = localStorage.getItem("lastName");
 const newStudentFullname = newStudentFirstName + " " + newStudentLastName;
 const listOfStudents = document.getElementById("studentList");
 const newStudentListItem = document.createElement("li");
+const newStudentLink = document.createElement("a");
 const nameText = document.createTextNode(newStudentFullname);
-newStudentListItem.appendChild(nameText);
-listOfStudents.appendChild(newStudentListItem);
+newStudentLink.appendChild(nameText);
+newStudentLink.href = "#";
+newStudentListItem.appendChild(newStudentLink);
+listOfStudents.appendChild(newStudentLink);
 // const newStudent = {
 //   studentFirstName: firstName.value,
 //   studentLastName: lastName.value,
