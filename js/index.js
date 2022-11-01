@@ -59,7 +59,7 @@ function createNewStudentElement() {
   const newStudentLink = document.createElement("a");
   const nameText = document.createTextNode(newStudentFullname);
   newStudentLink.appendChild(nameText);
-  newStudentLink.href = "#";
+  newStudentLink.href = "students.html";
   newStudentListItem.appendChild(newStudentLink);
   listOfStudents.appendChild(newStudentLink);
 }
