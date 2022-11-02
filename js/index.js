@@ -1,65 +1,80 @@
-const loggedIn = localStorage.getItem("admin");
+const loggedIn = localStorage.getItem("admin")
 if (loggedIn != 1) {
-  window.location.href = "index.html";
+    window.location.href = "index.html"
 }
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
-  "use strict";
+;(function () {
+    "use strict"
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  const forms = document.querySelectorAll(".needs-validation");
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll(".needs-validation")
 
-  // Loop over them and prevent submission
-  Array.from(forms).forEach((form) => {
-    form.addEventListener(
-      "submit",
-      (event) => {
-        if (!form.checkValidity()) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
+    // Loop over them and prevent submission
+    Array.from(forms).forEach((form) => {
+        form.addEventListener(
+            "submit",
+            (event) => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
 
-        form.classList.add("was-validated");
+                form.classList.add("was-validated")
 
-        createNewStudent();
-      },
-      false
-    );
-  });
-})();
+                createNewStudent()
+            },
+            false
+        )
+    })
+})()
 
-const createNewStudentForm = document.getElementById("createNewStudent");
-const firstName = document.getElementById("studentFirstName");
-const lastName = document.getElementById("studentLastName");
-const position = document.getElementById("studentPosition");
-const studentUsername = document.getElementById("studentUsername");
+const createNewStudentForm = document.getElementById("createNewStudent")
+const firstName = document.getElementById("studentFirstName")
+const lastName = document.getElementById("studentLastName")
+const position = document.getElementById("studentPosition")
+const studentUsername = document.getElementById("studentUsername")
 
-firstName.addEventListener("input", updateValue);
+firstName.addEventListener("input", updateValue)
 // lastName.addEventListener("input", updateValue);
 
 function updateValue(e) {
-  studentUsername.value = `${e.target.value}_id`;
+    studentUsername.value = `${e.target.value}_id`
 }
 
 function createNewStudent() {
-  localStorage.setItem("firstName", firstName.value);
-  localStorage.setItem("lastName", lastName.value);
+    localStorage.setItem("firstName", firstName.value)
+    localStorage.setItem("lastName", lastName.value)
 }
 
-const newStudentFirstName = localStorage.getItem("firstName");
-const newStudentLastName = localStorage.getItem("lastName");
-const newStudentFullname = newStudentFirstName + " " + newStudentLastName;
+const newStudentFirstName = localStorage.getItem("firstName")
+const newStudentLastName = localStorage.getItem("lastName")
+const newStudentFullname = newStudentFirstName + " " + newStudentLastName
 
-createNewStudentElement();
+createNewStudentElement()
 
 function createNewStudentElement() {
-  const listOfStudents = document.getElementById("studentList");
-  const newStudentListItem = document.createElement("li");
-  const newStudentLink = document.createElement("a");
-  const nameText = document.createTextNode(newStudentFullname);
-  newStudentLink.appendChild(nameText);
-  newStudentLink.href = "students.html";
-  newStudentListItem.appendChild(newStudentLink);
-  listOfStudents.appendChild(newStudentLink);
+    const listOfStudents = document.getElementById("studentList")
+    const newStudentListItem = document.createElement("li")
+    const newStudentLink = document.createElement("a")
+    const nameText = document.createTextNode(newStudentFullname)
+    newStudentLink.appendChild(nameText)
+    newStudentLink.href = "students.html"
+    newStudentListItem.appendChild(newStudentLink)
+    listOfStudents.appendChild(newStudentLink)
 }
+
+/*  
+  Once form is submitted, add new learner to right hand card
+  with an edit button and assign training.
+  Edit button deletes new learner infro allowing admin to create a new learner
+
+  Add "Assign training button" which redirects to training page
+
+  Training page shows new learner name and training modules and an "Assign" button
+
+  Admin clicks on training module and then assign button. There is a confirmation dialogue
+  "Are you sure you want to assign this training to 'new learner'?"
+
+  Confirm redirects to training program
+*/
