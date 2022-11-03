@@ -47,19 +47,26 @@ function createNewStudent() {
     localStorage.setItem("lastName", lastName.value)
 }
 
+function editNewStudent() {
+    localStorage.removeItem("firstName", firstName.value)
+    localStorage.removeItem("lastName", lastName.value)
+}
+
 const newStudentFirstName = localStorage.getItem("firstName")
 const newStudentLastName = localStorage.getItem("lastName")
 const newStudentFullname = newStudentFirstName + " " + newStudentLastName
 
+// This needs be moved into onclick function or eventListerner function
 createNewStudentElement()
 
 function createNewStudentElement() {
-    const listOfStudents = document.getElementById("studentList")
+    const listOfStudents = document.getElementById("student-list")
     const newStudentListItem = document.createElement("li")
     const newStudentLink = document.createElement("a")
     const nameText = document.createTextNode(newStudentFullname)
     newStudentLink.appendChild(nameText)
     newStudentLink.href = "students.html"
+    newStudentLink.id = "new-student"
     newStudentListItem.appendChild(newStudentLink)
     listOfStudents.appendChild(newStudentLink)
 }
@@ -67,9 +74,24 @@ function createNewStudentElement() {
 /*  
   Once form is submitted, add new learner to right hand card
   with an edit button and assign training.
-  Edit button deletes new learner infro allowing admin to create a new learner
+  Edit button deletes new learner info allowing admin to create a new learner */
 
-  Add "Assign training button" which redirects to training page
+// const editStudent = document.getElementById("edit-student")
+
+// editStudent.addEventListener("click", (e) => {
+//     const studentList = document.getElementById("student-list")
+//     const newStudent = document.getElementById("new-student")
+//     studentList.removeChild(studentList.firstElementChild)
+//     editNewStudent()
+// })
+
+function editStudent() {
+    editNewStudent()
+    const newStudent = document.getElementById("new-student")
+    newStudent.remove()
+}
+
+/*  Add "Assign training button" which redirects to training page
 
   Training page shows new learner name and training modules and an "Assign" button
 
