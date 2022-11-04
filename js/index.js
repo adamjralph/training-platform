@@ -30,15 +30,21 @@ if (loggedIn != 1) {
 })()
 
 const createNewStudentForm = document.getElementById("createNewStudent")
+const createNewStudentSubmit = document.getElementById(
+    "new-student-form-submit"
+)
 const firstName = document.getElementById("studentFirstName")
 const lastName = document.getElementById("studentLastName")
 const position = document.getElementById("studentPosition")
-const studentUsername = document.getElementById("studentUsername")
 
-firstName.addEventListener("input", updateValue)
-// lastName.addEventListener("input", updateValue);
+createNewStudentSubmit.addEventListener("click", (e) => {
+    createNewStudent()
+    createNewStudentElement()
+    e.preventDefault()
+})
 
 function updateValue(e) {
+    const studentUsername = document.getElementById("studentUsername")
     studentUsername.value = `${e.target.value}_id`
 }
 
@@ -52,14 +58,12 @@ function editNewStudent() {
     localStorage.removeItem("lastName", lastName.value)
 }
 
-const newStudentFirstName = localStorage.getItem("firstName")
-const newStudentLastName = localStorage.getItem("lastName")
-const newStudentFullname = newStudentFirstName + " " + newStudentLastName
-
 // This needs be moved into onclick function or eventListerner function
-createNewStudentElement()
 
-function createNewStudentElement() {
+function createNewStudentElement(firstName, lastName) {
+    const newStudentFirstName = localStorage.getItem("firstName")
+    const newStudentLastName = localStorage.getItem("lastName")
+    const newStudentFullname = newStudentFirstName + " " + newStudentLastName
     const listOfStudents = document.getElementById("student-list")
     const newStudentListItem = document.createElement("li")
     const newStudentLink = document.createElement("a")
