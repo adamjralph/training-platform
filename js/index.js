@@ -61,9 +61,7 @@ function editNewStudent() {
 // This needs be moved into onclick function or eventListerner function
 
 function createNewStudentElement(firstName, lastName) {
-    const newStudentFirstName = localStorage.getItem("firstName")
-    const newStudentLastName = localStorage.getItem("lastName")
-    const newStudentFullname = newStudentFirstName + " " + newStudentLastName
+    const newStudentFullname = getStudentName()
     const listOfStudents = document.getElementById("student-list")
     const newStudentListItem = document.createElement("li")
     const newStudentLink = document.createElement("a")
@@ -73,6 +71,18 @@ function createNewStudentElement(firstName, lastName) {
     newStudentLink.id = "new-student"
     newStudentListItem.appendChild(newStudentLink)
     listOfStudents.appendChild(newStudentLink)
+}
+
+function getStudentName() {
+    const newStudentFirstName = localStorage.getItem("firstName")
+    const newStudentLastName = localStorage.getItem("lastName")
+    return newStudentFirstName + " " + newStudentLastName
+}
+
+function getStudent() {
+    if (localStorage.getItem("firstName")) {
+        createNewStudentElement()
+    }
 }
 
 /*  
