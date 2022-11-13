@@ -37,12 +37,12 @@ const lastName = document.getElementById("studentLastName")
 const position = document.getElementById("studentPosition")
 
 // Select buttons
+const editStudentBtn = document.getElementById("edit-student")
+const assignTrainingBtn = document.getElementById("assign-training-btn")
 
 const createNewStudentSubmit = document.getElementById(
     "new-student-form-submit"
 )
-const assignTrainingBtn = document.getElementById("assign-training-btn")
-const editStudentBtn = document.getElementById("edit-student")
 
 createNewStudentSubmit.addEventListener("click", (e) => {
     createNewStudent()
@@ -157,18 +157,10 @@ function renameAddButton() {
 
 editStudentBtn.addEventListener("click", (e) => {
     editNewStudent()
-    renameAddButton()
+    if (localStorage.getItem("firstName")) {
+        renameAddButton()
+    }
     removeStudentElement()
     window.location.href = "#card-top"
     e.preventDefault()
 })
-
-/*  Add "Assign training button" which redirects to training page
-
-  Training page shows new learner name and training modules and an "Assign" button
-
-  Admin clicks on training module and then assign button. There is a confirmation dialogue
-  "Are you sure you want to assign this training to 'new learner'?"
-
-  Confirm redirects to training program
-*/

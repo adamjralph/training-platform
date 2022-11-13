@@ -14,7 +14,7 @@
             name="author"
             content="Adam Ralph"
         />
-        <title>Training Platform | Home</title>
+        <title>Training Platform | Assign training</title>
 
         <link
             rel="stylesheet"
@@ -43,10 +43,10 @@
         ></script>
         <script
             defer
-            src="js/index.js"
+            src="js/training.js"
         ></script>
     </head>
-    <body onload="getStudent()">
+    <body onload="readStudentDetails()">
         <div
             class="container-fluid row signout-spinner-container"
             id="signout-spinner"
@@ -231,7 +231,6 @@
                     aria-labelledby="offcanvasNav"
                 >
                     <div class="m-3">
-                        <!-- <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5> -->
                         <button
                             type="button"
                             class="btn-close btn-close-white"
@@ -298,7 +297,7 @@
                             <li class="nav-item mb-2">
                                 <a
                                     href="#"
-                                    class="nav-link p-2"
+                                    class="nav-link p-2 active"
                                     aria-current="page"
                                 >
                                     <svg
@@ -328,8 +327,8 @@
                             </li>
                             <li class="nav-item mb-2">
                                 <a
-                                    href="#"
-                                    class="nav-link p-2 active"
+                                    href="students.html"
+                                    class="nav-link p-2"
                                     aria-current="page"
                                 >
                                     <svg
@@ -339,7 +338,7 @@
                                     >
                                         <use xlink:href="#people-circle" />
                                     </svg>
-                                    Students
+                                    Learners
                                 </a>
                             </li>
                         </ul>
@@ -501,12 +500,16 @@
                     <div class="card p-3 col-lg-5 card-dashboard text-bg-light">
                         <h2 class="card-header">Available training</h2>
                         <div class="card-body">
-                            <form class="assign-training-selection m-auto">
+                            <form
+                                class="assign-training-selection m-auto"
+                                id="assign-training-form"
+                            >
                                 <input
                                     type="radio"
                                     name="select-training"
-                                    class="btn-check"
+                                    class="btn-check training"
                                     id="btn-training-one"
+                                    value="training-one"
                                     autocomplete="off"
                                 />
                                 <label
@@ -522,8 +525,9 @@
                                 <input
                                     type="radio"
                                     name="select-training"
-                                    class="btn-check"
+                                    class="btn-check training"
                                     id="btn-training-two"
+                                    value="training-two"
                                     autocomplete="off"
                                 />
                                 <label
@@ -533,22 +537,18 @@
                                     <h4>Training two</h4>
                                     <p>Department specific training</p> </label
                                 ><br />
-                                <a href="training.html">
-                                    <button
-                                        type="submit"
-                                        onclick="assignTraining()"
-                                        id="assign-training-btn"
-                                        class="btn btn-success"
-                                        href="training.html"
-                                        >Assign</button
-                                    >
-                                </a>
-                                <a href="students.html">
-                                    <button
-                                        id="delete-student-btn"
-                                        class="btn btn-secondary"
-                                        >Go back</button
-                                    >
+                                <button
+                                    id="assign-training-btn"
+                                    class="btn btn-success"
+                                    type="submit"
+                                    >Assign</button
+                                >
+                                <a
+                                    href="students.html"
+                                    role="button"
+                                    id="assign-training-back-btn"
+                                    class="btn btn-secondary"
+                                    >Go back
                                 </a>
                             </form>
                         </div>
@@ -575,6 +575,5 @@
         </main>
     </body>
 
-    <script></script>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 </html>
