@@ -42,6 +42,7 @@ const createNewStudentSubmit = document.getElementById(
     "new-student-form-submit"
 )
 const assignTrainingBtn = document.getElementById("assign-training-btn")
+const editStudentBtn = document.getElementById("edit-student")
 
 createNewStudentSubmit.addEventListener("click", (e) => {
     createNewStudent()
@@ -55,6 +56,7 @@ function deleteStudent() {
     localStorage.removeItem("lastName")
     removeStudentElement()
     buttonState(createNewStudentSubmit, false)
+    removeLinkFromButton(assignTrainingBtn)
 }
 
 function updateValue(e) {
@@ -67,6 +69,7 @@ function createNewStudent() {
     localStorage.setItem("lastName", lastName.value)
     buttonState(createNewStudentSubmit, true)
     buttonState(assignTrainingBtn, false)
+    addLinkToButton(assignTrainingBtn, "training.html")
 }
 
 /* Function to toggle button state between active and disabled
@@ -86,6 +89,7 @@ function editNewStudent() {
     firstName.value = first
     lastName.value = last
     buttonState(createNewStudentSubmit, false)
+    removeLinkFromButton(assignTrainingBtn)
 }
 
 // This needs be moved into onclick function or eventListerner function
@@ -109,10 +113,20 @@ function getStudentName() {
     return newStudentFirstName + " " + newStudentLastName
 }
 
+function addLinkToButton(element, item) {
+    element.href = item
+}
+
+function removeLinkFromButton(element) {
+    element.removeAttribute("href")
+}
+
 // This function is called by onload event set on <body>
 function getStudent() {
     if (localStorage.getItem("firstName")) {
         createNewStudentElement()
+        addLinkToButton(assignTrainingBtn, "training.html")
+        addLinkToButton(assignTrainingBtn, "training.html")
     }
 }
 
@@ -141,11 +155,11 @@ function renameAddButton() {
     addButton.textContent = "Update"
 }
 
-const editStudentButton = document.getElementById("edit-student")
-editStudentButton.addEventListener("click", (e) => {
+editStudentBtn.addEventListener("click", (e) => {
     editNewStudent()
     renameAddButton()
     removeStudentElement()
+    window.location.href = "#card-top"
     e.preventDefault()
 })
 

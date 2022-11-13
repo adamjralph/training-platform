@@ -412,11 +412,8 @@
                     >Welcome, <a href="profile.html">Admin</a></h3
                 >
                 <div class="row m-auto gap-3 d-flex justify-content-around">
-                    <div
-                        class="card p-3 col-lg-5 card-dashboard bg-light"
-                        id="card-top"
-                    >
-                        <h2 class="card-header">Add new learner</h2>
+                    <div class="card p-3 col-lg-5 card-dashboard bg-light">
+                        <h2 class="card-header">New learner</h2>
                         <div class="card-body">
                             <form
                                 class="needs-validation"
@@ -430,6 +427,7 @@
                                         >First name</label
                                     >
                                     <input
+                                        readonly
                                         required
                                         type="text"
                                         class="form-control"
@@ -449,6 +447,7 @@
                                         >Last name</label
                                     >
                                     <input
+                                        readonly
                                         required
                                         type="text"
                                         class="form-control"
@@ -488,41 +487,70 @@
                                         id="studentPosition"
                                     />
                                 </div>
-                                <div>
+                                <!-- <div>
                                     <button
                                         class="btn btn-primary"
                                         id="new-student-form-submit"
                                         type="submit"
                                         >Add learner</button
                                     >
-                                </div>
+                                </div> -->
                             </form>
                         </div>
                     </div>
                     <div class="card p-3 col-lg-5 card-dashboard text-bg-light">
-                        <h2 class="card-header">New learner</h2>
+                        <h2 class="card-header">Available training</h2>
                         <div class="card-body">
-                            <ul id="student-list"> </ul>
-                            <a
-                                id="edit-student"
-                                role="button"
-                                type="submit"
-                                class="btn btn-primary"
-                                >Edit
-                            </a>
-                            <a
-                                id="assign-training-btn"
-                                class="btn btn-primary"
-                                role="button"
-                                >Assign training
-                            </a>
-                            <button
-                                onclick="deleteStudent()"
-                                id="delete-student-btn"
-                                class="btn btn-danger"
-                                href="training.html"
-                                >Delete</button
-                            >
+                            <form class="assign-training-selection m-auto">
+                                <input
+                                    type="radio"
+                                    name="select-training"
+                                    class="btn-check"
+                                    id="btn-training-one"
+                                    autocomplete="off"
+                                />
+                                <label
+                                    class="btn btn-outline-primary mb-3 row-12"
+                                    for="btn-training-one"
+                                >
+                                    <h4>Training one</h4>
+                                    <p
+                                        >Site orientation and basic safety
+                                        training</p
+                                    > </label
+                                ><br />
+                                <input
+                                    type="radio"
+                                    name="select-training"
+                                    class="btn-check"
+                                    id="btn-training-two"
+                                    autocomplete="off"
+                                />
+                                <label
+                                    class="btn btn-outline-primary mb-3"
+                                    for="btn-training-two"
+                                >
+                                    <h4>Training two</h4>
+                                    <p>Department specific training</p> </label
+                                ><br />
+                                <a href="training.html">
+                                    <button
+                                        type="submit"
+                                        onclick="assignTraining()"
+                                        id="assign-training-btn"
+                                        class="btn btn-success"
+                                        href="training.html"
+                                        >Assign</button
+                                    >
+                                </a>
+                                <a href="students.html">
+                                    <button
+                                        id="delete-student-btn"
+                                        class="btn btn-secondary"
+                                        >Go back</button
+                                    >
+                                </a>
+                            </form>
                         </div>
                     </div>
                 </div>
