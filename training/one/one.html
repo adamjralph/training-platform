@@ -15,16 +15,13 @@
             rel="stylesheet"
         />
         <link
-            type="text/css"
-            href="signin.css"
+            rel="stylesheet"
+            href="../../css/global.css"
         />
+
         <script
             defer
-            src="js/signin.js"
-        ></script>
-        <script
-            defer
-            src="../../js/training.js"
+            src="../../js/signout.js"
         ></script>
         <script
             defer
@@ -32,7 +29,30 @@
         ></script>
         <title>Training One</title>
     </head>
-    <body onload="displayStudentName()">
+    <body onload="readStudentDetails()">
+        <div
+            class="container-fluid row signout-spinner-container"
+            id="signout-spinner"
+        >
+            <div class="col m-auto text-center">
+                <div
+                    class="spinner-border row mx-auto"
+                    role="status"
+                >
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p>logging you out ...</p>
+            </div>
+        </div>
+        <div class="mt-2">
+            <a
+                class="sign-out p-3"
+                id="sign-out"
+                href="../../index.html"
+                ><small>Sign out</small></a
+            >
+        </div>
+
         <main class="sign-in-page">
             <div class="container-fluid text-center">
                 <div
@@ -46,11 +66,11 @@
                     <p>To Training One</p>
                     <section class="d flex">
                         <a
-                            onclick="setTrainingToken()"
-                            href="/training/one/1.html"
+                            href="1.html"
                             role="button"
                             id="assign-training-back-btn"
                             class="btn btn-success"
+                            onclick="setTrainingToken()"
                             >Begin
                         </a>
                         <a

@@ -1,3 +1,8 @@
+const loggedIn = localStorage.getItem("admin")
+if (loggedIn != 1) {
+    window.location.href = "index.html"
+}
+
 /*  
     ASSIGN TRAINING 
     
@@ -27,11 +32,6 @@ function readStudentDetails() {
     const newStudentLastName = localStorage.getItem("lastName")
     firstName.value = newStudentFirstName
     lastName.value = newStudentLastName
-}
-
-// When training commences the admin is logged out to prevent student from accessing admin area
-function denyAdminArea() {
-    localStorage.removeItem("admin")
 }
 
 const assignTrainingBtn = document.getElementById("assign-training-btn")

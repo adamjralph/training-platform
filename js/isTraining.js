@@ -5,6 +5,4 @@ function studentIsTraining() {
     }
 }
 
-function studentEndedTraining() {
-    localStorage.removeItem("isTraining")
-}
+
