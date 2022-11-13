@@ -40,8 +40,16 @@ const position = document.getElementById("studentPosition")
 createNewStudentSubmit.addEventListener("click", (e) => {
     createNewStudent()
     createNewStudentElement()
+    clearFormInputs()
     e.preventDefault()
 })
+
+function deleteStudent() {
+    localStorage.removeItem("firstName")
+    localStorage.removeItem("lastName")
+    removeStudentElement()
+    buttonState(createNewStudentSubmit, false)
+}
 
 function updateValue(e) {
     const studentUsername = document.getElementById("studentUsername")
@@ -51,16 +59,31 @@ function updateValue(e) {
 function createNewStudent() {
     localStorage.setItem("firstName", firstName.value)
     localStorage.setItem("lastName", lastName.value)
+    buttonState(createNewStudentSubmit, true)
+}
+
+/* Function to toggle button state between active and disabled
+takes two arguments: element - HTML button, state: string, 'true' or 'false' */
+function buttonState(element, state) {
+    element.disabled = state
+}
+
+function clearFormInputs() {
+    firstName.value = ""
+    lastName.value = ""
 }
 
 function editNewStudent() {
-    localStorage.removeItem("firstName", firstName.value)
-    localStorage.removeItem("lastName", lastName.value)
+    const first = localStorage.getItem("firstName")
+    const last = localStorage.getItem("lastName")
+    firstName.value = first
+    lastName.value = last
+    buttonState(createNewStudentSubmit, false)
 }
 
 // This needs be moved into onclick function or eventListerner function
 
-function createNewStudentElement(firstName, lastName) {
+function createNewStudentElement() {
     const newStudentFullname = getStudentName()
     const listOfStudents = document.getElementById("student-list")
     const newStudentListItem = document.createElement("li")
@@ -79,6 +102,7 @@ function getStudentName() {
     return newStudentFirstName + " " + newStudentLastName
 }
 
+// This function is called by onload event set on <body>
 function getStudent() {
     if (localStorage.getItem("firstName")) {
         createNewStudentElement()
@@ -99,11 +123,24 @@ function getStudent() {
 //     editNewStudent()
 // })
 
-function editStudent() {
-    editNewStudent()
+function removeStudentElement() {
     const newStudent = document.getElementById("new-student")
     newStudent.remove()
+    // e.preventDefault()
 }
+
+function renameAddButton() {
+    const addButton = document.getElementById("new-student-form-submit")
+    addButton.textContent = "Update"
+}
+
+const editStudentButton = document.getElementById("edit-student")
+editStudentButton.addEventListener("click", (e) => {
+    editNewStudent()
+    renameAddButton()
+    removeStudentElement()
+    e.preventDefault()
+})
 
 /*  Add "Assign training button" which redirects to training page
 

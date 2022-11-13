@@ -467,7 +467,7 @@
                                     <input
                                         readonly
                                         type="text"
-                                        class="form-control"
+                                        class="form-control inactive"
                                         id="studentUsername"
                                     />
                                     <p id="output"></p>
@@ -479,6 +479,7 @@
                                         >Position (optional)</label
                                     >
                                     <input
+                                        readonly
                                         type="text"
                                         class="form-control"
                                         id="studentPosition"
@@ -501,7 +502,6 @@
                             <ul id="student-list"> </ul>
                             <a href="students.html">
                                 <button
-                                    onclick="editStudent()"
                                     id="edit-student"
                                     type="submit"
                                     class="btn btn-primary"
@@ -516,6 +516,13 @@
                                     >Assign training</button
                                 >
                             </a>
+                            <button
+                                onclick="deleteStudent()"
+                                id="delete-student-btn"
+                                class="btn btn-danger"
+                                href="training.html"
+                                >Delete</button
+                            >
                         </div>
                     </div>
                 </div>

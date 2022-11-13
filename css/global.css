@@ -1,38 +1,42 @@
 .card-link,
 .nav-pills {
-  text-decoration: none;
-  list-style: none;
+    text-decoration: none;
+    list-style: none;
 }
 
 .nav-item {
-  width: 100%;
+    width: 100%;
 }
 
 .user-icon {
-  margin-right: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .training-logo {
-  margin-right: 0.75rem;
+    margin-right: 0.75rem;
 }
 
 .signout-spinner-container {
-  display: none;
-  position: absolute;
-  background-color: #333;
-  color: #fff;
-  height: 100vh;
-  margin-inline: auto;
-  opacity: 0.8;
-  z-index: 2;
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    height: 100vh;
+    margin-inline: auto;
+    opacity: 0.8;
+    z-index: 2;
 }
 
 .spinner-border {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .card-dashboard {
-  background-color: rgb(205, 188, 212);
+    background-color: rgb(205, 188, 212);
+}
+
+.card-body a {
+    text-decoration: none;
 }
 
 /* Form validation styles */
