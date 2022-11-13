@@ -29,13 +29,19 @@ if (loggedIn != 1) {
     })
 })()
 
+// Select form elements
+
 const createNewStudentForm = document.getElementById("createNewStudent")
-const createNewStudentSubmit = document.getElementById(
-    "new-student-form-submit"
-)
 const firstName = document.getElementById("studentFirstName")
 const lastName = document.getElementById("studentLastName")
 const position = document.getElementById("studentPosition")
+
+// Select buttons
+
+const createNewStudentSubmit = document.getElementById(
+    "new-student-form-submit"
+)
+const assignTrainingBtn = document.getElementById("assign-training-btn")
 
 createNewStudentSubmit.addEventListener("click", (e) => {
     createNewStudent()
@@ -60,6 +66,7 @@ function createNewStudent() {
     localStorage.setItem("firstName", firstName.value)
     localStorage.setItem("lastName", lastName.value)
     buttonState(createNewStudentSubmit, true)
+    buttonState(assignTrainingBtn, false)
 }
 
 /* Function to toggle button state between active and disabled
