@@ -37,25 +37,44 @@
                 >
                     <h5 id="student-name"></h5>
                     <p>Has been assigned</p>
-                    <h3 class="mb-3">Training one</h3>
+                    <h4 class="mb-3">Training one</h4>
+                    <small class="card col-4 p-3 text-start mb-3"
+                        >Once the training begins you will be logged out of the
+                        Admin area. <br />
+                        This will deny the learner unauthorised access.<br />
+                        To make changes to the learner or assign different
+                        training click the back button.</small
+                    >
                     <section class="d flex">
-                        <a
-                            href="/training/one/one.html"
-                            role="button"
-                            id="assign-training-back-btn"
-                            class="btn btn-success"
-                            >Begin
-                        </a>
                         <a
                             href="training.html"
                             role="button"
                             id="assign-training-back-btn"
                             class="btn btn-primary"
+                            onclick="removeTrainingToken()"
                             >Go back
+                        </a>
+                        <a
+                            href="/training/one/one.html"
+                            role="button"
+                            id="assign-training-back-btn"
+                            class="btn btn-success"
+                            onclick="setTrainingToken()"
+                            >Begin
                         </a>
                     </section>
                 </div>
             </div>
         </main>
+        <script>
+            function setTrainingToken() {
+                localStorage.setItem("isTraining", 1)
+                // When training commences the admin is logged out to prevent student from accessing admin area
+                localStorage.removeItem("admin")
+            }
+            function removeTrainingToken() {
+                localStorage.removeItem("isTraining")
+            }
+        </script>
     </body>
 </html>
