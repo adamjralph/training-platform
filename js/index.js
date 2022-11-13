@@ -39,7 +39,6 @@ const position = document.getElementById("studentPosition")
 // Select buttons
 const editStudentBtn = document.getElementById("edit-student")
 const assignTrainingBtn = document.getElementById("assign-training-btn")
-
 const createNewStudentSubmit = document.getElementById(
     "new-student-form-submit"
 )

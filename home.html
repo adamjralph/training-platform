@@ -44,9 +44,16 @@
             defer
             src="js/signout.js"
         ></script>
-        <script src="js/index.js"></script>
+        <script
+            defer
+            src="js/index.js"
+        ></script>
+        <script
+            defer
+            src="js/isTraining.js"
+        ></script>
     </head>
-    <body>
+    <body onload="studentIsTraining()">
         <div
             class="container-fluid row signout-spinner-container"
             id="signout-spinner"

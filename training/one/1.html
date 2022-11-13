@@ -30,6 +30,10 @@
             defer
             src="one.js"
         ></script>
+        <script
+            defer
+            src="../../js/isTraining.js"
+        ></script>
         <title>Training One</title>
     </head>
     <body onload="displayStudentName()">
@@ -38,15 +42,20 @@
                 <div
                     class="d-flex flex-column min-vh-100 justify-content-center align-items-center"
                 >
-                    <p>Welcome</p>
                     <h5
                         id="student-name"
                         class="mb-5`"
                     ></h5>
-                    <p>To Training One</p>
+                    <section class="card">
+                        <div class="card-headding">
+                            <h3>Instructions</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>To Training One</p>
+                        </div>
+                    </section>
                     <section class="d flex">
                         <a
-                            onclick="setTrainingToken()"
                             href="/training/one/1.html"
                             role="button"
                             id="assign-training-back-btn"
@@ -54,11 +63,12 @@
                             >Begin
                         </a>
                         <a
-                            href="/training.html"
+                            href="/training-one.html"
                             role="button"
                             id="assign-training-back-btn"
                             class="btn btn-primary"
-                            >Go back
+                            onclick="studentEndedTraining()"
+                            >End
                         </a>
                     </section>
                 </div>

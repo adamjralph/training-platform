@@ -45,8 +45,12 @@
             defer
             src="js/training.js"
         ></script>
+        <script
+            defer
+            src="js/isTraining.js"
+        ></script>
     </head>
-    <body onload="readStudentDetails()">
+    <body onload="readStudentDetails(), studentIsTraining()">
         <div
             class="container-fluid row signout-spinner-container"
             id="signout-spinner"

@@ -29,6 +29,11 @@ function readStudentDetails() {
     lastName.value = newStudentLastName
 }
 
+// When training commences the admin is logged out to prevent student from accessing admin area
+function denyAdminArea() {
+    localStorage.removeItem("admin")
+}
+
 const assignTrainingBtn = document.getElementById("assign-training-btn")
 const assignTrainingForm = document.getElementById("assign-training-form")
 const trainingOne = document.getElementById("btn-training-one")
