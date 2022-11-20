@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <link
+            href="/assets/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <script
+            defer
+            src="js/signin.js"
+        ></script>
+        <script
+            defer
+            src="../../js/isTraining.js"
+        ></script>
+        <script
+            defer
+            src="one.js"
+        ></script>
+
+        <title>Training One</title>
+    </head>
+    <body onload="displayStudentName()">
+        <main class="sign-in-page">
+            <div class="container-fluid text-center">
+                <div
+                    class="d-flex flex-column min-vh-100 justify-content-center align-items-center"
+                >
+                    <h5
+                        id="student-name"
+                        class="mb-5`"
+                    ></h5>
+                    <section class="card">
+                        <div class="card-headding">
+                            <h3>Instructions</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>To Training One</p>
+                        </div>
+                    </section>
+                    <section class="d flex">
+                        <a
+                            href="/training/one/1.html"
+                            role="button"
+                            id="assign-training-back-btn"
+                            class="btn btn-success"
+                            >Begin
+                        </a>
+                        <a
+                            href="one.html"
+                            role="button"
+                            id="assign-training-back-btn"
+                            class="btn btn-primary"
+                            onclick="studentEndedTraining()"
+                            >End
+                        </a>
+                    </section>
+                    <section class="quiz card d-flex">
+                        <h1>Question 1</h1>
+                        <div class="question">
+                            <form
+                                action="submit"
+                                class="question-1"
+                                id="question"
+                                data-number="1"
+                            >
+                                <fieldset>
+                                    <h3>What is the answer to question 1?</h3>
+                                    <div class="options">
+                                        <input
+                                            type="radio"
+                                            name="q1"
+                                            id="q1"
+                                            value="no"
+                                        />
+                                        <label for="q1">The answer is 1.</label>
+                                    </div>
+                                    <div class="options">
+                                        <input
+                                            type="radio"
+                                            name="q1"
+                                            id="q1"
+                                            value="correct"
+                                        />
+                                        <label for="q1">The answer is 2.</label>
+                                    </div>
+                                    <div class="options">
+                                        <input
+                                            type="radio"
+                                            name="q1"
+                                            id="q1"
+                                            value="no"
+                                        />
+                                        <label for="q1">The answer is 3.</label>
+                                    </div>
+                                    <pre
+                                        class="response"
+                                        id="log"
+                                    ></pre>
+                                    <button type="submit">Enter</button>
+                                </fieldset>
+                            </form>
+                            <div class="bottom-buttons">
+                                <a href="q2.html">
+                                    <button class="btn next-btn"
+                                        >Next Question</button
+                                    >
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <script>
+            function studentEndedTraining() {
+                localStorage.removeItem("isTraining")
+            }
+        </script>
+    </body>
+</html>
