@@ -35,46 +35,20 @@
                 <div
                     class="d-flex flex-column min-vh-100 justify-content-center align-items-center"
                 >
-                    <h5
-                        id="student-name"
-                        class="mb-5`"
-                    ></h5>
-                    <section class="card">
-                        <div class="card-headding">
-                            <h3>Instructions</h3>
-                        </div>
-                        <div class="card-body">
-                            <p>To Training One</p>
-                        </div>
-                    </section>
-                    <section class="d flex">
-                        <a
-                            href="/training/one/1.html"
-                            role="button"
-                            id="assign-training-back-btn"
-                            class="btn btn-success"
-                            >Begin
-                        </a>
-                        <a
-                            href="one.html"
-                            role="button"
-                            id="assign-training-back-btn"
-                            class="btn btn-primary"
-                            onclick="studentEndedTraining()"
-                            >End
-                        </a>
-                    </section>
-                    <section class="quiz card d-flex">
-                        <h1>Question 1</h1>
+                    <section class="quiz card d-flex p-3">
                         <div class="question">
                             <form
                                 action="submit"
-                                class="question-1"
+                                class="question-1 text-start"
                                 id="question"
                                 data-number="1"
                             >
                                 <fieldset>
-                                    <h3>What is the answer to question 1?</h3>
+                                    <h4>Question 1</h4>
+                                    <legend
+                                        >What is the answer to question
+                                        1?</legend
+                                    >
                                     <div class="options">
                                         <input
                                             type="radio"
@@ -106,16 +80,22 @@
                                         class="response"
                                         id="log"
                                     ></pre>
-                                    <button type="submit">Enter</button>
                                 </fieldset>
-                            </form>
-                            <div class="bottom-buttons">
-                                <a href="q2.html">
-                                    <button class="btn next-btn"
-                                        >Next Question</button
-                                    >
+                                <a
+                                    type="submit"
+                                    role="button"
+                                    id="assign-training-back-btn"
+                                    class="btn btn-success"
+                                    >Check
                                 </a>
-                            </div>
+                                <button
+                                    href="q2.html"
+                                    id="assign-training-back-btn"
+                                    disabled
+                                    class="btn btn-primary"
+                                    >Next
+                                </button>
+                            </form>
                         </div>
                     </section>
                 </div>
