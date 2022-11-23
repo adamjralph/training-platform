@@ -6,6 +6,7 @@ function setTrainingToken() {
 
 const question = document.getElementById("question")
 const log = document.getElementById("log")
+const next = document.getElementById("next-btn")
 
 question.addEventListener(
     "submit",
@@ -17,9 +18,12 @@ question.addEventListener(
             if (entry[1] === "correct") {
                 localStorage.setItem(questionNum, 1)
                 output = `That is the correct answer!`
+                log.style.color = "green"
+                next.toggleAttribute("disabled")
             } else {
                 localStorage.setItem(questionNum, 0)
                 output = "Sorry, that is not the right answer"
+                log.style.color = "crimson"
             }
         }
         log.innerText = output
