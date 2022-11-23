@@ -19,7 +19,7 @@ question.addEventListener(
                 localStorage.setItem(questionNum, 1)
                 output = `That is the correct answer!`
                 log.style.color = "green"
-                next.toggleAttribute("disabled")
+                next.classList.toggle("disabled")
             } else {
                 localStorage.setItem(questionNum, 0)
                 output = "Sorry, that is not the right answer"
@@ -31,3 +31,7 @@ question.addEventListener(
     },
     false
 )
+
+// function disableNextBtn() {
+//     next.setAttribute("disabled")
+// }
