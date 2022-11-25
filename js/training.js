@@ -50,3 +50,9 @@ assignTrainingBtn.addEventListener("click", (e) => {
     }
     e.preventDefault()
 })
+
+// Display student name has been assigned to training
+
+const studentAssigned = document.getElementById('student-assigned')
+
+studentAssigned.innerText = `${displayStudentName()} has been assigned`

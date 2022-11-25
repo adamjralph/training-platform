@@ -4,6 +4,8 @@ function setTrainingToken() {
     localStorage.removeItem("admin")
 }
 
+
+
 const question = document.getElementById("question")
 const log = document.getElementById("log")
 const next = document.getElementById("next-btn")
