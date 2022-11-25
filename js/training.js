@@ -19,12 +19,13 @@ const introScreenName = document.getElementById("student-name")
 const firstName = document.getElementById("studentFirstName")
 const lastName = document.getElementById("studentLastName")
 const position = document.getElementById("studentPosition")
+let addedText;
 
 // On load function
-function displayStudentName() {
+function displayStudentName(addedText) {
     const newStudentFirstName = localStorage.getItem("firstName")
     const newStudentLastName = localStorage.getItem("lastName")
-    introScreenName.innerText = `${newStudentFirstName} ${newStudentLastName}`
+    introScreenName.innerText = `${newStudentFirstName} ${newStudentLastName} ${addedText}`
 }
 
 function readStudentDetails() {
