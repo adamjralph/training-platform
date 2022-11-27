@@ -36,7 +36,7 @@
                     class="d-flex flex-column min-vh-100 justify-content-center align-items-center"
                 >
                     <ul
-                        class="card p-5  col-sm-4 text-start mb-3 "
+                        class="card p-5 col-md-4 text-start mb-3 "
                     >
                             <p id="student-name"></p>
                         <h5 class="mb-3">Training one</h5>
@@ -51,7 +51,7 @@
                                 This will deny the learner unauthorised access.
                             </small>
                         </li>
-                        <li>
+                        <li>browser
                             <small>
                                 To make changes to the learner or assign
                                 different training click the back button.
@@ -82,6 +82,7 @@
         <script>
             function setTrainingToken() {
                 localStorage.setItem("isTraining", 1)
+                localStorage.setItem("training", 1)
                 // When training commences the admin is logged out to prevent student from accessing admin area
                 localStorage.removeItem("admin")
             }
