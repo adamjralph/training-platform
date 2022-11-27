@@ -2,5 +2,6 @@
 
 ### To do
 
-> Add previously built quiz
 > Add training sections
+> Add "new learner added" notification
+> Create results page
