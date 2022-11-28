@@ -15,6 +15,7 @@ question.addEventListener(
     (e) => {
         const data = new FormData(question)
         let questionNum = question.dataset.number
+        let questionWrong = `${question.dataset.number}x`
         let output = ""
         for (const entry of data) {
             if (entry[1] === "correct") {
@@ -23,7 +24,7 @@ question.addEventListener(
                 log.style.color = "green"
                 next.classList.toggle("disabled")
             } else {
-                localStorage.setItem(questionNum, 0)
+                localStorage.setItem(questionWrong, 1)
                 output = "Sorry, that is not the right answer"
                 log.style.color = "crimson"
             }
