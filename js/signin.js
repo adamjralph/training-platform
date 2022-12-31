@@ -1,7 +1,6 @@
 const login = document.getElementById("signin-form");
 const admin = "";
 const output = document.getElementById("signin-feedback");
-// localStorage.removeItem("admin");
 
 login.addEventListener("submit", async (e) => {
   const username = document.querySelector(".username").value;
