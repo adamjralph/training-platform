@@ -56,4 +56,6 @@ assignTrainingBtn.addEventListener("click", (e) => {
 
 const studentAssigned = document.getElementById('student-assigned')
 
+
 studentAssigned.innerText = `${displayStudentName()} has been assigned`
+
